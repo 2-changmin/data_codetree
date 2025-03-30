@@ -1,40 +1,45 @@
 #include <iostream>
-#include <string>
 #include <list>
 
 using namespace std;
 
 int n, m;
-string s;
 
 int main() {
+    list<char> l;
+    list<char>::iterator it;
+
     cin >> n >> m;
-    cin >> s;
-    string::iterator it;
-    it = s.end();
-    for (int i = 0; i < m; i++) {
-        char command;
+    
+    for(int i = 0;i<n;i++){
+        char bread;
+        cin >> bread;
+        l.push_back(bread);
+    }
+    it = l.end();
+    for(int i=0; i<m;i++){
+        string command;
         cin >> command;
-        if (command == 'P') {
-            char c;
-            cin >> c;
-            s.insert(next(it),c);
-        }
-        if (command == 'L'){
-            if(*it == s.front()) continue;
-            it--;
-        }
-        else if(command == 'R'){
+        if(command == "R"){
+            if(it!=l.end())
             it++;
         }
-        else if(command == 'D'){
-            if(*it == s.back()) continue;
-            s.erase(it);
+        else if(command == "L"){
+            if(it!=l.begin())
+            it--;
+        }
+        else if(command == "D"){
+            if(it!=l.end())
+            it = l.erase(it);
+        }
+        else if(command == "P"){
+            char k;
+            cin >> k;
+            l.insert(it,k);
         }
     }
-    cout << s;
-
-    // Please write your code here.
-
+    for(it = l.begin(); it != l.end(); it++){
+        cout << *it;
+    }
     return 0;
 }
