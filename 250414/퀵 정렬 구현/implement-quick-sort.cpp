@@ -31,13 +31,10 @@ void quick_sort(int arr[],int low,int high){
 
 int main() {
     cin >> n;
-
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-    int low = 0;
-    int high = n-1;
-    quick_sort(arr,low,high);
+    quick_sort(arr,0,n-1);
 
     for(int i = 0; i < n; i++){
         cout << arr[i] << " ";
