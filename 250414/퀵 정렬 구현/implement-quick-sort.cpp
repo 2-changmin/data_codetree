@@ -6,12 +6,10 @@ using namespace std;
 int n;
 int arr[100000];
 
-int select_pivot(int arr[],int low, int high){
-    return arr[high];
-}
+
 
 int partition(int arr[],int low,int high){
-    int pivot = select_pivot(arr,low,high);
+    int pivot = arr[high];
     int i = low - 1;
     for(int j = low; j < high; j++){
         if(arr[j] < pivot){
