@@ -25,12 +25,13 @@ void quick_sort(int arr[],int low,int high){
         int pos = partition(arr, low, high);
         
         quick_sort(arr,low,pos-1);
-        quick_sort(arr,pos,high);
+        quick_sort(arr,pos+1,high);
     }
 }
 
 int main() {
     cin >> n;
+
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
