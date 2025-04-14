@@ -6,12 +6,11 @@ using namespace std;
 int n;
 int arr[100000];
 
-
-
-int partition(int arr[],int low,int high){
+int partition(int arr[],int low, int high){
     int pivot = arr[high];
     int i = low - 1;
-    for(int j = low; j < high; j++){
+    
+    for(int j =low; j < high; j++){
         if(arr[j] < pivot){
             i++;
             swap(arr[i],arr[j]);
@@ -39,6 +38,7 @@ int main() {
     int low = 0;
     int high = n-1;
     quick_sort(arr,low,high);
+
     for(int i = 0; i < n; i++){
         cout << arr[i] << " ";
     }
