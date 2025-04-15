@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <list>
 
 using namespace std;
@@ -9,6 +8,7 @@ int n, m;
 int main() {
     list<char> bread;
     list<char>::iterator it;
+
     cin >> n >> m;
 
     for(int i = 0; i < n; i++){
@@ -31,7 +31,7 @@ int main() {
         }
         else if(command == 'D'){
             if(it == bread.end()) continue;
-            bread.erase(it);
+            it = bread.erase(it);
         }
         else if(command == 'P'){
             char c;
