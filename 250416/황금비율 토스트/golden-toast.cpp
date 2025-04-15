@@ -18,12 +18,9 @@ int main() {
     }
     it = bread.end();
     for (int i = 0; i < m; i++) {
-        char c;
         char command;
         cin >> command;
-        if (command == 'P') {
-            cin >> c;
-        }
+        
         if(command == 'L'){
             if(it == bread.begin()) continue;
             it--;
@@ -37,6 +34,8 @@ int main() {
             bread.erase(it);
         }
         else if(command == 'P'){
+            char c;
+            cin >> c;
             bread.insert(it,c);
         }
     }
