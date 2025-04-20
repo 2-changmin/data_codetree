@@ -5,9 +5,9 @@ using namespace std;
 int n;
 int arr[100];
 
-int max1(int n){
-    if(n == 0) return arr[0];
-    return max(max1(n-1),arr[n]);
+int max1(int i){
+    if(i == n-1) return arr[i];
+    return max(arr[i],max1(i+1));
 }
 
 int main() {
@@ -17,7 +17,7 @@ int main() {
         cin >> arr[i];
     }
 
-    int a = max1(n);
+    int a = max1(0);
     cout << a;
     return 0;
 }
