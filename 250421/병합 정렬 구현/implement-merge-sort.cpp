@@ -42,8 +42,8 @@ void merge(int low,int mid,int high){
         k++;
         j++;
     }
-    for(k = low; k <= high; k++){
-        arr[k] = merged_arr[k];
+    for(int l = low; l <= high; l++){
+        arr[l] = merged_arr[l];
     }
 }
 
