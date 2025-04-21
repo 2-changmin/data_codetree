@@ -1,19 +1,18 @@
 #include <iostream>
 #include <vector>
 
-
 using namespace std;
 
 int n;
 
 int getmaxdigits(vector<int>& arr){
-    int maxnum = arr[0];
-    for(int i = 1; i < n; i++){
-        if(arr[i] > maxnum) maxnum = arr[i];
+    int maxvalue = arr[0];
+    for(int num:arr){
+        if(num > maxvalue) maxvalue = num;
     }
     int cnt = 0;
-    while(maxnum > 0){
-        maxnum /= 10;
+    while(maxvalue > 0){
+        maxvalue /= 10;
         cnt++;
     }
     return cnt;
@@ -24,18 +23,19 @@ void sort(vector<int>& arr){
     int divisor = 1;
     for(int i = 0; i < maxdigits; i++){
         vector<vector<int>> buckets(10);
-
         for(int j = 0; j < n; j++){
-            int each_digit = (arr[j]/divisor) % 10;
-            buckets[each_digit].push_back(arr[j]);
+            int digits = (arr[j]/divisor) % 10;
+            buckets[digits].push_back(arr[j]);
         }
         int idx = 0;
-        for(int b = 0; b < 10; b++){
-            for(int k = 0; k < buckets[b].size(); k++)
-                arr[idx++] = buckets[b][k];
+        for(int k = 0; k < 10; k++){
+            for(int num:buckets[k]){
+                arr[idx++] = num;
+            }
         }
         divisor *= 10;
     }
+    return;
 }
 
 int main() {
@@ -44,13 +44,9 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-
     sort(arr);
-
-    for(int num:arr){
-        cout << num << " ";
+    for(int i = 0; i < n; i++){
+        cout << arr[i] << " ";
     }
-    
-
     return 0;
 }
