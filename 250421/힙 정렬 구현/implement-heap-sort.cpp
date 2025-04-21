@@ -5,7 +5,7 @@ using namespace std;
 int n;
 int arr[100001];
 
-void heapify(int n,int i){
+void heapify(int n, int i){
     int largest = i;
     int l = i * 2;
     int r = i * 2 + 1;
@@ -19,13 +19,14 @@ void heapify(int n,int i){
 }
 
 void heap_sort(int n){
-    for(int i = n / 2; i >= 1; i--) heapify(n,i);
+    for(int i = n/2; i >= 1; i--){
+        heapify(n,i);
+    }
     for(int i = n; i > 1; i--){
-        swap(arr[1],arr[i]);
+        swap(arr[1], arr[i]);
         heapify(i-1,1);
     }
 }
-
 int main() {
     cin >> n;
 
