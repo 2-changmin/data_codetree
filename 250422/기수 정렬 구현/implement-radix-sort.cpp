@@ -6,8 +6,8 @@ int n;
 
 int getdigits(vector<int>& arr){
     int maxnum = arr[0];
-    for(int i = 1; i < n; i++){
-        if(maxnum < arr[i]) maxnum = arr[i];
+    for(int num:arr){
+        if(num > maxnum) maxnum = num;
     }
     int cnt = 0;
     while(maxnum > 0){
@@ -20,8 +20,8 @@ int getdigits(vector<int>& arr){
 void sort(vector<int>& arr){
     int maxdigits = getdigits(arr);
     int divisor = 1;
-    vector<vector<int>> buckets(10);
     for(int i = 0; i < maxdigits; i++){
+        vector<vector<int>> buckets(10);
         for(int j = 0; j < n; j++){
             int digits = (arr[j]/divisor) % 10;
             buckets[digits].push_back(arr[j]);
