@@ -32,6 +32,7 @@ void sort(vector<int>& arr){
                 arr[idx++] = num;
             }
         }
+        divisor *= 10;
     }
 }
 
