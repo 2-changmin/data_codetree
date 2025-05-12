@@ -4,24 +4,27 @@
 
 using namespace std;
 
-string str;
-
 int main() {
+    string str;
     cin >> str;
+
     stack<char> s;
-    char a = '(';
+
     for(int i = 0; i < str.length(); i++){
         if(str[i] == '('){
-            s.push(a);
+            s.push('(');
         }
         else if(str[i] == ')'){
-            if(s.empty() == true) continue;
+            if(s.empty()) {
+                cout << "No";
+                return 0;
+            }
             s.pop();
         }
     }
-    if(s.empty() == true) cout << "Yes";
-    else cout << "No";
-    
+
+    if(s.empty()) cout << "Yes";  
+    else cout << "No";            
 
     return 0;
 }
