@@ -8,13 +8,14 @@ string str;
 
 int main() {
     cin >> str;
-    stack<string> s;
-    string a = "rr";
+    stack<char> s;
+    char a = '(';
     for(int i = 0; i < str.length(); i++){
         if(str[i] == '('){
             s.push(a);
         }
         else if(str[i] == ')'){
+            if(s.empty() == true) continue;
             s.pop();
         }
     }
