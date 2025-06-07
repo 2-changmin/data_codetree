@@ -15,7 +15,7 @@ int main() {
         }
         else{
             if(s.empty()){
-                cout << "NO";
+                cout << "No";
                 return -1;
             }
             s.pop();
