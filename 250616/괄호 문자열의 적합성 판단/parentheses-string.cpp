@@ -10,11 +10,11 @@ int main() {
     cin >> str;
     stack<char> s;
     
-    for(int i = 0; i < str.length(); i++){
-        if(str[i] == '('){
+    for(int i : str){
+        if(i == '('){
             s.push('(');
         }
-        else if(str[i] == ')'){
+        else if(i == ')'){
             if(s.empty()){
                 cout << "No" << endl;
                 return 0;
