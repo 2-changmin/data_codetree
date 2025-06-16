@@ -10,7 +10,7 @@ int main() {
     cin >> str;
     stack<char> s;
     
-    for(int i = 0; i < str.size(); i++){
+    for(int i = 0; i < str.length(); i++){
         if(str[i] == '('){
             s.push('(');
         }
