@@ -9,14 +9,13 @@ string str;
 int main() {
     cin >> str;
     stack<char> s;
-
-    for(int i:str){
+    for(char i : str){
         if(i == '('){
-            s.push('(');
+            s.push(i);
         }
         else if(i == ')'){
             if(s.empty()){
-                cout << "No" << endl;
+                cout << "No";
                 return 0;
             }
             s.pop();
