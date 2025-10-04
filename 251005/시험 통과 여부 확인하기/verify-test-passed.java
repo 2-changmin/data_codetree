@@ -4,7 +4,7 @@ public class Main {
         // Please write your code here.
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        if(n>80){
+        if(n>=80){
             System.out.print("pass");
         }
         else{
